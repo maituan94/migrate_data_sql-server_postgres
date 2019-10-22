@@ -1,0 +1,81 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: poc-migration
+# app: poc-migration-app
+# org: minhnguyenvan
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage,'dev'}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      Resource: "*"
+  environment:
+    DB_AURORA_HOST: ${${self:custom.config}:DB_AURORA_HOST}
+    DB_AURORA_USER: ${${self:custom.config}:DB_AURORA_USER}
+    DB_AURORA_PASSWORD: ${${self:custom.config}:DB_AURORA_PASSWORD}
+    DB_AURORA_DATABASE: ${${self:custom.config}:DB_AURORA_DATABASE}
+
+    DB_SQLSERVER_HOST: ${${self:custom.config}:DB_SQLSERVER_HOST}
+    DB_SQLSERVER_USER: ${${self:custom.config}:DB_SQLSERVER_USER}
+    DB_SQLSERVER_PASSWORD: ${${self:custom.config}:DB_SQLSERVER_PASSWORD}
+    DB_SQLSERVER_DATABASE: ${${self:custom.config}:DB_SQLSERVER_DATABASE}
+
+package:
+  exclude:
+    - node_modules/**
+    - package.json
+    - package-lock.json
+    - coverage/**
+    - deploy.sh
+
+# layers:
+#   commonLibs:
+#     path: layer
+#     compatibleRuntimes:
+#       - nodejs10.x
+      
+custom:
+  dynamodb:
+    stages:
+      - dev
+      - prod
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
+  config: file(./poc-migration/config/env.${self:provider.stage}.json)
+
+functions:
+  hello:
+    handler: poc-migration/handler.getData
+    # layers:
+    #   - {Ref: CommonLibsLambdaLayer}
+    events:
+      - http: 
+          path: /
+          method: GET
+          cors: true

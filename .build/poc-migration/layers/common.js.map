@@ -1,0 +1,1 @@
+{"version":3,"file":"common.js","sourceRoot":"","sources":["../../../poc-migration/layers/common.ts"],"names":[],"mappings":";;AAAA,MAAM,WAAW,GAAG,CAAC,CAAC,OAAc,GAAG,EAAE,UAAiB,qBAAqB,EAAE,EAAE;IAC/E,OAAO;QACH,UAAU,EAAE,IAAI;QAChB,IAAI,EAAE,IAAI,CAAC,SAAS,CAAC;YACjB,OAAO,EAAE,OAAO;SACnB,CAAC;KACL,CAAC;AACN,CAAC,CAAC,CAAA;AAEM,kCAAW"}
