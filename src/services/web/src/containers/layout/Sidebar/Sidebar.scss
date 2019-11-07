@@ -1,0 +1,80 @@
+.db-sidebar{
+    .logo{
+        padding: $logoPadding;
+        text-align: center;
+        img{
+            max-width: 80%;
+        }
+    }
+
+    .ant-layout-sider-children{
+        min-height: calc(100vh - 48px);
+        .ant-menu-inline, .ant-menu-inline-collapsed{
+            margin-top: $menuMarginTop;
+            border-right: none;
+            .ant-menu-item{
+                font-size: $sideBarFontSize;
+                .anticon{
+                    margin-right: $iconMarginRight;
+                    .icon-menu{
+                        width: 18px;
+                        &__hover{
+                            width: 18px;
+                            display: none;
+                        }
+                    }
+                    &+span{
+                        padding-top: 2px;
+                    }
+                }
+                &.ant-menu-item-selected,&.ant-menu-item-active{
+                    .anticon{
+                        .icon-menu{
+                            display: none;
+                            &__hover{
+                                display: inline-block !important;
+                            }
+                        }
+                        &+span{
+                            color: $sideBarTextHover;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        // .ant-menu.ant-menu-inline-collapsed{
+        //     .ant-menu-item{
+        //         .icon-menu{
+        //             margin-right: $iconMarginRight_Collapsed;
+        //             &__hover{
+        //                 margin-right: $iconMarginRight_Collapsed;
+        //             }
+        //         }
+        //         &.ant-menu-item-selected,&.ant-menu-item-active{
+        //             .icon-menu{
+        //                 margin-right: $iconMarginRight_Collapsed;
+        //                 &__hover{
+        //                     margin-right: $iconMarginRight_Collapsed;
+        //                     display: inline-block !important;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        
+    }
+    .ant-layout-sider-trigger{
+        text-align: left;
+        padding-left: $itemPaddingLeft;
+    }
+
+    &.ant-layout-sider-collapsed{
+        .ant-layout-sider-trigger{
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+
+}

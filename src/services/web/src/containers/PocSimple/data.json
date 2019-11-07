@@ -1,0 +1,122 @@
+[
+    {
+      "key": "IOTMP-37",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/934414",
+      "summary": "Create by Moniz Test#3"
+    },
+    {
+      "key": "IOTMP-36",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/931170",
+      "summary": "Create by Moniz Test#1"
+    },
+    {
+      "key": "IOTMP-35",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/931169",
+      "summary": "Create by Moniz Test#1"
+    },
+    {
+      "key": "IOTMP-34",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904029",
+      "summary": "CLONE - As Kärcher I want to have an automatic production information validator"
+    },
+    {
+      "key": "IOTMP-33",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903916",
+      "summary": "CLONE - As the team we want to have access to all tools and sites we currently need for our developing tasks."
+    },
+    {
+      "key": "IOTMP-32",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904006",
+      "summary": "CLONE - As supplier I want to be able to request new certificates"
+    },
+    {
+      "key": "IOTMP-31",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903962",
+      "summary": "CLONE - As PO I want to be able to search for the latest actions of a specific device"
+    },
+    {
+      "key": "IOTMP-30",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903937",
+      "summary": "CLONE - As the team we want to fully understand the release process"
+    },
+    {
+      "key": "IOTMP-29",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903940",
+      "summary": "CLONE - As PO I want to be informed when a new upload has been performed"
+    },
+    {
+      "key": "IOTMP-28",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903965",
+      "summary": "CLONE - As a PO I want to see the system health"
+    },
+    {
+      "key": "IOTMP-27",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904031",
+      "summary": "CLONE - As supplier I want to be able to choose for which device I need to download certificates"
+    },
+    {
+      "key": "IOTMP-26",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903961",
+      "summary": "CLONE - As Kärcher I want to make sure every supplier sees only a released set of devices according to his account"
+    },
+    {
+      "key": "IOTMP-25",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903991",
+      "summary": "CLONE - As PO I want to be able to get the device logs for a specific device"
+    },
+    {
+      "key": "IOTMP-24",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904028",
+      "summary": "CLONE - As PO I want to see the platform KPIs"
+    },
+    {
+      "key": "IOTMP-23",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904053",
+      "summary": "CLONE - As supplier I want to be able to login to iot platform management"
+    },
+    {
+      "key": "IOTMP-22",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903938",
+      "summary": "CLONE - As PO I want to see whether all services are running correctly"
+    },
+    {
+      "key": "IOTMP-21",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903895",
+      "summary": "CLONE - The team wants to have a team name "
+    },
+    {
+      "key": "IOTMP-20",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/904007",
+      "summary": "CLONE - As supplier I want to be able to download a prepared set of certificates"
+    },
+    {
+      "key": "IOTMP-19",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903984",
+      "summary": "CLONE - As supplier I want to be able to upload a new bunch of production information"
+    },
+    {
+      "key": "IOTMP-18",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/903718",
+      "summary": "CLONE - The team wants to create some interaction on the exsiting Management Platform (Hello World)"
+    },
+    {
+      "key": "IOTMP-17",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/801416",
+      "summary": "The team wants to be fully onboarded and ready to work"
+    },
+    {
+      "key": "IOTMP-16",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/801388",
+      "summary": "Kärcher wants to know device infos"
+    },
+    {
+      "key": "IOTMP-15",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/801360",
+      "summary": "Kärcher wants to know the status of the IoT platform"
+    },
+    {
+      "key": "IOTMP-14",
+      "self": "https://taskbox.kaercher.com/rest/api/2/issue/801246",
+      "summary": "Suppliers want to manage certificats"
+    }
+  ]

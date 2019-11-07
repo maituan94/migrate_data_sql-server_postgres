@@ -1,0 +1,62 @@
+.table__item-count {
+    font-size: 14px;
+  }
+  
+  .table__pagination-wrapper {
+    background-color: #ededed;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    padding-right: 20px;
+    .table__visible-pages-wrapper {
+      line-height: 2.8;
+    }
+  }
+
+  .table__page-size-option {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span {
+      padding: 10px;
+    }
+    select {
+      border: 1px solid #e3e3e3;
+      background: #ededed;
+      padding: 5px 7px;
+      border-radius: 3px;
+      font-weight: normal;
+      display: inline-block;
+    }
+  }
+
+  .table__back-to-top {
+    line-height: 2.0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .table__pagination {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .table__page-button {
+    line-height: 1.6;
+    font-size: 16px;
+    color:#9b9b9b;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .table__page-button:disabled {
+    cursor: not-allowed;
+    color: gray;
+  }
+  
+  .table__page-button--active {
+    color: #000000;
+    font-weight: bold;
+  }

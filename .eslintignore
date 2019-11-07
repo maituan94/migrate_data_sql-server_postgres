@@ -1,0 +1,17 @@
+node_modules/
+*/node_modules/
+assets/
+*/assets/
+public/
+*/public/
+*.yml
+*.scss
+*.css
+*.less
+*.json
+README.md
+*.md
+*.lock
+coverage/
+*/coverage/
+*.svg

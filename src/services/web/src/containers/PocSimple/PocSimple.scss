@@ -1,0 +1,51 @@
+.poc-simple{
+    .ant-table{
+        font-size: 13px;
+        .ant-table-tbody{
+            .ant-table-row{
+                cursor: pointer;
+                transition: all 0s,height 0s;
+                .green-text{
+                    color: $textGreen;
+                }
+                .grey-text{
+                    color: $textGray;
+                }
+                .orange-text{
+                    color: $textOrange;
+                }
+                .action-col{
+                    display: flex;
+                    align-items: center;
+                    visibility: hidden;
+                    .action-item{
+                        margin-right: 20px;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                td{
+                    border-left: none;
+                    border-right: none;
+                    background: $textWhite;
+                }
+
+                &:hover{
+                    font-weight: bold;
+                    .action-col{
+                        visibility: visible;
+                    } 
+                }
+            }
+        }
+        .ant-table-thead{
+            tr{
+                th{
+                    background: $textWhite;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+        }
+    }
+}

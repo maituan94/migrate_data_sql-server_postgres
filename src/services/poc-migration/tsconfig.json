@@ -16,12 +16,12 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "resolveJsonModule": true,
-        "esModuleInterop": true,  
+        "esModuleInterop": true,
         "lib": [
             "es6","es5"
         ]
     },
     "include": [
-        "src/**/*"
+        "src/**/*", "../lambda-trigger-db/src/migration/1572590594002-Person.ts"
     ]
 }

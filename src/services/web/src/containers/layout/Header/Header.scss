@@ -1,0 +1,17 @@
+.db-header{
+    height: $headerHeight;
+    padding: 15px;
+    background: white;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 3px 3px #e8e8e8;
+    .title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .profile{
+        margin-left: auto;
+        cursor: pointer;
+    }
+}

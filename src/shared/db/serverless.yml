@@ -1,0 +1,71 @@
+service: ${self:custom.env.layer.db.service}
+
+# plugins:
+# - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-1'}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - lambda:UpdateFunctionConfiguration
+        - ssm:GetParameter
+        - ssm:GetParameters
+      Resource: "*"
+  environment:
+    STAGE: ${self:provider.stage}
+    NODE_PATH: ${self:custom.env.layer.node_path}
+    SQLSERVER_HOST: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_HOST}
+    SQLSERVER_USER: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_USER}
+    SQLSERVER_PASSWORD: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_PASSWORD}
+    SQLSERVER_DATABASE: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_DATABASE}
+
+    DB_AURORA_HOST: ${self:custom.env.${self:custom.aurora}.DB_AURORA_HOST}
+    DB_AURORA_PORT: ${self:custom.env.${self:custom.aurora}.DB_AURORA_PORT}
+    DB_AURORA_USER: ${self:custom.env.${self:custom.aurora}.DB_AURORA_USER}
+    DB_AURORA_PASSWORD: ${self:custom.env.${self:custom.aurora}.DB_AURORA_PASSWORD}
+    DB_AURORA_DATABASE: ${self:custom.env.${self:custom.aurora}.DB_AURORA_DATABASE}
+
+package:
+  exclude:
+    - src/**
+    - tsconfig.json
+    - .build/**
+    - coverage/**
+
+custom:
+  cfgPath: "../../cfg"
+  env: ${file(${self:custom.cfgPath}/env.${self:provider.stage}.yml)}
+  sql: "sql-server"
+  aurora: "aurora-postgres"
+
+# functions:
+#   send:
+#     handler: src/main.testMSSQLConnection
+#     layers:
+#     # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
+#     events:
+#       - http:
+#           path: /
+#           method: GET
+#           cors: true
+#   send_2:
+#     handler: src/main.testAuroraConnection
+#     layers:
+#     # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
+#     events:
+#       - http:
+#           path: /
+#           method: GET
+#           cors: true
+
+layers:
+  db:
+    name: ${self:custom.env.layer.db.name}-${self:custom.env.layer.db.service}-${self:provider.stage}
+    path: ./
+    compatibleRuntimes:
+      - nodejs8.10
+      - nodejs10.x

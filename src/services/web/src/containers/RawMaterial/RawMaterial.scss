@@ -1,0 +1,75 @@
+.raw-material {
+  display: flex;
+  align-items: center;
+  margin-bottom: $marginFromSection;
+  .main-title {
+    font-size: $titleFontSize;
+    color: $mainTitle;
+  }
+  .filter-area {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    .filter-selection {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      background: white;
+      border: solid 1px $borderGrey;
+      cursor: pointer;
+      font-size: $fontSizeOriginal;
+      margin-left: $marginHorizontalElements;
+      &:hover {
+        border: solid 1px $borderYellow;
+        font-weight: bold;
+      }
+      .dropdown-text{
+        margin-right: 5px;
+      }
+    }
+  }
+  .search-place{
+    width: auto;
+    margin-left: $marginHorizontalElements;
+    .ant-input{
+      border-radius: 0;
+      font-size: $fontSizeOriginal;
+      padding: 10px 15px;
+      width: 220px;
+      height: auto;
+      &:hover{
+        border-color: $borderYellow;
+      }
+      &:focus{
+        border-color: $borderYellow;
+        box-shadow: 0 0 0 2px rgba(214,206,97,.2);
+      }
+    }
+    
+  }
+  .add-raw-material{
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 0;
+    margin-left: 20px;
+    font-size: $fontSizeOriginal;
+    font-family: $fontClanProBold;
+    border: solid 1px $borderGrey;
+    background: $backgroundYellow;
+    color: $textBlack;
+    transition-duration: 0.5s;
+    .add-icon{
+      font-size: 14px;
+    }
+    .text{
+      padding-top:2px;
+    }
+    &:hover{
+      color: $textBlack;
+      background: $backgroundYellowOpacity;
+      
+    }
+  }
+}

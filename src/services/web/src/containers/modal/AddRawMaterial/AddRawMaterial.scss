@@ -1,0 +1,30 @@
+.ant-modal-content{
+  .ant-modal-header{
+    border-bottom: 0;
+  }
+  .ant-modal-body{
+    min-height: 50vh;
+  }
+  .ant-modal-footer{
+    border-top: 0;
+    font-family: $fontClanProBold;
+    font-size: $fontSizeOriginal;
+    font-weight: $fontWeightBold;
+    .ant-btn{
+      padding: $buttonPadding;
+      align-items: center;
+      height: auto;
+      color: $textBlack;
+      border-radius: 0px;
+      &.btn-cancel{
+        border: solid 1px $borderbtn;
+        background-color: $backgroundWhiteBtn;
+      }
+      &.btn-ok{
+        background-color: $backgroundYellow;
+        border-color: $borderYellow;
+        border: solid 1px $borderYellow;
+      }
+    }
+  }
+}

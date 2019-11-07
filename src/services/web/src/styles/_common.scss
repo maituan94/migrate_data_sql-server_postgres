@@ -1,0 +1,20 @@
+.ant-menu-dark, .ant-layout-sider-dark, .ant-layout-sider-trigger{
+    background: $sideBarBackground;
+}
+
+.ant-menu-dark .ant-menu-item{
+    color: $sideBarTextcolor;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected{
+    background: $sideBarBackground;
+}
+
+.right-side{
+    position: relative;
+    .content{
+        max-height: calc(100vh - 121px);
+        overflow: auto;
+        padding: 20px;
+    }
+}

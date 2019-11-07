@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'ClanPro-News';
+  src: url('../assets/fonts/ClanPro-News.otf'); 
+}
+
+@font-face {
+  font-family: 'ClanPro-Medium';
+  src: url('../assets/fonts/ClanPro-Medium.otf'); 
+}
+
+@font-face {
+  font-family: 'ClanPro-Bold';
+  src: url('../assets/fonts/ClanPro-Bold.otf'); 
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'ClanPro-News';
+  min-height: 100vh;
+  background-color: #f3f3f3;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+
+.iot-container {
+    display: flex;
+    background: #fff;
+}
+.iot-header-container {
+    padding: 20px 0px;
+    border-bottom: solid 2px #d9d9d9;
+    padding-left: 25px;
+    background-color: #ffffff;
+}
+
+.iot-modal-body{
+    padding:20px 30px ;
+}
+
+.iot-modal-header {
+  display: -ms-block;
+  display: block;
+  border:none;
+  padding: 28px 30px 16px 30px;
+}
+
+.iot-modal-title{
+  font-size: 18px;
+  color: #000000;
+  font-weight: bold;
+  line-height: 1.11;
+  text-transform: uppercase;
+}
+.iot-modal-footer{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: right;
+  align-items: right;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 20px 0 15px 0; 
+}

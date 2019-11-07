@@ -1,0 +1,80 @@
+service: poc-migration
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage,'dev'}
+  region: ${opt:region, 'eu-west-1'}
+  vpc:
+    securityGroupIds:
+      - sg-06079a5c69adb6d24
+    subnetIds:
+      - subnet-0405d5ce41edbb5eb
+      - subnet-0e062031e63b71a53
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - lambda:UpdateFunctionConfiguration
+        - ssm:GetParameter
+        - ssm:GetParameters
+      Resource: "*"
+  environment:
+    STAGE: ${self:provider.stage}
+    NODE_PATH: ${self:custom.env.layer.node_path}
+    SQLSERVER_HOST: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_HOST}
+    SQLSERVER_USER: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_USER}
+    SQLSERVER_PASSWORD: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_PASSWORD}
+    SQLSERVER_DATABASE: ${self:custom.env.${self:custom.sql}.DB_SQLSERVER_DATABASE}
+
+    DB_AURORA_HOST: ${self:custom.env.${self:custom.aurora}.DB_AURORA_HOST}
+    DB_AURORA_PORT: ${self:custom.env.${self:custom.aurora}.DB_AURORA_PORT}
+    DB_AURORA_USER: ${self:custom.env.${self:custom.aurora}.DB_AURORA_USER}
+    DB_AURORA_PASSWORD: ${self:custom.env.${self:custom.aurora}.DB_AURORA_PASSWORD}
+    DB_AURORA_DATABASE: ${self:custom.env.${self:custom.aurora}.DB_AURORA_DATABASE}
+
+package:
+  exclude:
+    - node_modules/**
+    - package.json
+    - package-lock.json
+    - coverage/**
+
+custom:
+  cfgPath: "../../cfg"
+  env: ${file(${self:custom.cfgPath}/env.${self:provider.stage}.yml)}
+  sql: "sql-server"
+  aurora: "aurora-postgres"
+
+functions:
+  hello:
+    handler: src/index.getData
+    layers:
+      - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
+      - ${cf:${self:custom.env.layer.helper.service}-${self:provider.stage}.HelperLambdaLayerQualifiedArn}
+    events:
+      - http:
+          path: /
+          method: GET
+          cors: true
+
+resources:
+  Resources:
+    AWSLambdaVPCAccessExecutionRole:
+      Type: AWS::IAM::ManagedPolicy
+      Properties:
+        Description: Creating policy for vpc connetion.
+        Roles:
+          - { "Ref": "IamRoleLambdaExecution" }
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - ec2:CreateNetworkInterface
+                - ec2:DescribeNetworkInterfaces
+                - ec2:DeleteNetworkInterface
+              Resource: "*"

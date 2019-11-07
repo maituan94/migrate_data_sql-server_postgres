@@ -1,0 +1,14 @@
+.db-footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    height: $footerHeight;
+    .text{
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 14px;
+        background: #f0f2f5;
+        margin: auto;
+    }
+}

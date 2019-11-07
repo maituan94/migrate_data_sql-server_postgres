@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+.btn-zoi {
+    span {
+        margin-right: 10px;
+    }
+    font-size: 13px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 0px;
+    border: solid 1px #d9d9d9;
+}
+
+button.zoi-btn-primary {
+    background-image: $primary-color;
+  }
+  .btn-zoi-primary {
+    background-color: #FFED00;
+    color: #000000;
+    font-family: 'ClanPro-Medium';
+    height: 40px;
+  }
+  .btn-zoi-secondary {
+    background-image: linear-gradient(to bottom, #f8f8f8, #ededed);
+   
+  }
+  .btn-zoi-transparent {
+    background-color: rgba(0,0,0,0);
+    color: $dark-text-color;
+    
+  }
+  .btn-zoi-small {
+    padding: 3px 10px;
+    font-size: 13px;
+    
+    span.xo-icon {
+      font-size: 13px;
+      padding-right: 5px;
+    }
+  }
+
+  .btn-with-icon {
+    padding: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 36px;
+  }
+
+
+
+
+
+@-webkit-keyframes icon-fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes icon-fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+.icon-spinner-spin {
+    -webkit-animation: icon-fa-spin 2s infinite linear;
+    animation: icon-fa-spin 2s infinite linear;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+}
