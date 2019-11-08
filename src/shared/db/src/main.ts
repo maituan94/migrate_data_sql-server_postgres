@@ -1,3 +1,4 @@
+"use strict";
 import { sendMessage } from "./helpers/utils";
 import { MSSQLContext } from "./core/MSSQLContext";
 import { AuroraContext } from "./core/AuroraContext";
@@ -20,8 +21,8 @@ async function testAuroraConnection() {
   try {
     const AuroraDB:any = AuroraContext.getInstance();
     const request:any = await AuroraDB.getRequest();
-    const result:any = await request.query(`SELECT * FROM person`);
-
+    const result:any = await request.query(`SELECT * FROM information_schema.tables`);
+    
     return sendMessage(200, result);
   } catch (err) {
     return sendMessage(502, err);

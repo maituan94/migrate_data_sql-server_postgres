@@ -1,4 +1,4 @@
-import { Category, Person, Question, Todo, User } from "../entities";
+import { Supplier,Producer,ContactPerson,BaseRMSP } from "../entities";
 
 interface AuroraConfig {
   type: string;
@@ -23,5 +23,5 @@ export const AuroraConfig: any = {
   synchronize: true,
   migrationsRun: true,
   logging: false,
-  entities: [Category, Person, Question, Todo, User]
+  entities: [BaseRMSP,Supplier,Producer,ContactPerson]
 };

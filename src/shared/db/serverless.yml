@@ -1,7 +1,8 @@
 service: ${self:custom.env.layer.db.service}
 
-# plugins:
-# - serverless-offline
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
 
 provider:
   name: aws
@@ -42,30 +43,30 @@ custom:
   sql: "sql-server"
   aurora: "aurora-postgres"
 
-# functions:
-#   send:
-#     handler: src/main.testMSSQLConnection
-#     layers:
-#     # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
-#     events:
-#       - http:
-#           path: /
-#           method: GET
-#           cors: true
-#   send_2:
-#     handler: src/main.testAuroraConnection
-#     layers:
-#     # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
-#     events:
-#       - http:
-#           path: /
-#           method: GET
-#           cors: true
+functions:
+  # send:
+  #   handler: src/main.testMSSQLConnection
+  #   layers:
+  #   # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
+  #   events:
+  #     - http:
+  #         path: /
+  #         method: GET
+  #         cors: true
+  send:
+    handler: src/main.testAuroraConnection
+    # layers:
+    # - ${cf:${self:custom.env.layer.db.service}-${self:provider.stage}.DbLambdaLayerQualifiedArn}
+    events:
+      - http:
+          path: /
+          method: GET
+          cors: true
 
-layers:
-  db:
-    name: ${self:custom.env.layer.db.name}-${self:custom.env.layer.db.service}-${self:provider.stage}
-    path: ./
-    compatibleRuntimes:
-      - nodejs8.10
-      - nodejs10.x
+# layers:
+#   db:
+#     name: ${self:custom.env.layer.db.name}-${self:custom.env.layer.db.service}-${self:provider.stage}
+#     path: ./
+#     compatibleRuntimes:
+#       - nodejs8.10
+#       - nodejs10.x
