@@ -18,7 +18,7 @@
     "typeorm": "^0.2.20"
   },
   "devDependencies": {
-    "serverless-offline": "^6.0.0-alpha.41",
+    "serverless-offline": "^12.0.3",
     "serverless-plugin-typescript": "^1.1.9",
     "@types/es6-shim": "^0.31.39",
     "@types/node": "^12.11.2",
